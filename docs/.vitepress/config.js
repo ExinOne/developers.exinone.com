@@ -1,6 +1,6 @@
 export default {
   title: 'ExinOne Developers',
-  description: 'Just playing around with Pando',
+  description: 'Integrate ExinOne Trading API your projects with ease',
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/getting-started' },
