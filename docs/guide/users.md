@@ -4,7 +4,7 @@
 
 ## 用户详情
 
-<APIEndpoint method="GET" url="/user/details" />
+<APIEndpoint method="GET" url="/users/me" />
 
 我们通过「用户详情」接口可以获取到用户的 EPC 钱包地址，当该钱包有足够的 EPC 时，可以抵扣支持 EPC 抵扣服务费的交易
 

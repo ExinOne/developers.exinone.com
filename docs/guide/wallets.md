@@ -6,7 +6,6 @@
 <APIEndpoint method="GET" url="/wallet/asset" />
 
 
-**暂只支持获取 EPC 钱包的余额，方便知道 EPC 资产余额，不足时充值，交易时可以使用 EPC 抵扣。**
 
 Headers: 
 
