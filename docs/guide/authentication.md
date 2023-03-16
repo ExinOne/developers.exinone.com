@@ -3,7 +3,7 @@
 
 ExinOne 的 API 都需要进行身份验证。你需要提供一个 ExinOne 颁发的 token 来调用它们。
 
-上面一步 [生成密钥](.//getting-started) 中生成了 `keystore.json` 文件。此文件里的信息，将用来调用 Mixin 的 API 来获取 Mixin 颁发的 `Mixin Token`。
+上面一步 [生成密钥](./getting-started) 中生成了 `keystore.json` 文件。此文件里的信息，将用来调用 Mixin 的 API 来获取 Mixin 颁发的 `Mixin Token`。
 
 ExinOne 将使用该 `Mixin Token` 获取信息并注册用户，之后返回一个 `Bearer Token` 作为 ExinOne API 的请求令牌。
 
