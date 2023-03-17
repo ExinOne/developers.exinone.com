@@ -2,6 +2,11 @@
 
 ExinOne 是 Mixin 生态最受欢迎的开发商 Exin 旗下一站式数字资产金融服务平台。
 
+## EndPoint
+
+`https://app.eiduwejdk.com/api/v2`
+
+
 ## 注册 Mixin 网络应用
 
 开始之前，请先注册为 Mixin 开发者。

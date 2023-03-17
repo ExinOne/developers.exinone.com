@@ -2,6 +2,11 @@
 
 ExinOne is a one-stop digital asset financial service platform under Exin, the most popular developer in the Mixin ecosystem.
 
+## EndPoint
+
+`https://app.eiduwejdk.com/api/v2`
+
+
 ## Register Mixin Network Application
 
 Before you begin, please register as a Mixin developer.
