@@ -19,7 +19,7 @@ MixinSDK::network()
     ->accessTokenGetInfo('');
 ```
 
-The signature implementation refers to the Mixin developer document [Signing](https://developers.mixin.one/docs/api/guide#signing), and the JWT Payload has an additional parameter:
+The signature implementation refers to the Mixin developer document [Signing](https://developers.mixin.one/docs/api/guide#signing), sign authentication token for `GET https://api.mixin.one/me` with scope "FULL", and the JWT Payload has an additional parameter:
 
 JWT Payload:
 

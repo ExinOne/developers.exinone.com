@@ -22,7 +22,7 @@ MixinSDK::network()
 ```
 
 
-签名实现参考 Mixin 开发者文档  [Signing](https://developers.mixin.one/docs/api/guide#signing)，JWT Payload 多一个参数：
+签名实现参考 Mixin 开发者文档  [Signing](https://developers.mixin.one/docs/api/guide#signing)，签署端点 `GET https://api.mixin.one/me`，JWT Payload 多一个参数：
 
 JWT Payload:
 
