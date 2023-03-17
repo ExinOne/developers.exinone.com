@@ -1,52 +1,47 @@
-# API 授权
+# API Authorization
 
+All APIs of ExinOne require authentication. You need to provide a token issued by ExinOne to call them.
 
-ExinOne 的 API 都需要进行身份验证。你需要提供一个 ExinOne 颁发的 token 来调用它们。
+In the previous step, [Generate Key](./getting-started), a `keystore.json` file was generated. The information in this file will be used to call Mixin's APIs to obtain the `Mixin Token` issued by Mixin.
 
-上面一步 [生成密钥](./getting-started) 中生成了 `keystore.json` 文件。此文件里的信息，将用来调用 Mixin 的 API 来获取 Mixin 颁发的 `Mixin Token`。
+ExinOne will use this `Mixin Token` to obtain information and register the user, and then return a `Bearer Token` as the request token for ExinOne API.
 
-ExinOne 将使用该 `Mixin Token` 获取信息并注册用户，之后返回一个 `Bearer Token` 作为 ExinOne API 的请求令牌。
+Next, let's see how to operate.
 
-接下来演示下怎么操作。
+## Generate Mixin Token
 
-## 生成 Mixin Token
+Taking PHP as an example, using [mixin-sdk-php](https://github.com/ExinOne/mixin-sdk-php), you can use the following code to generate an access token:
 
-
-以 PHP 为例，使用 [mixin-sdk-php](https://github.com/ExinOne/mixin-sdk-php) ，你可以使用以下代码来生成访问令牌：
-
-```php [PHP]
+```php
 MixinSDK::network()
     ->setReturnAccessToken(true)
     ->setAud('61103d28-3ac2-44a2-ae34-bd956070dab1')
     ->accessTokenGetInfo('');
 ```
 
-
-签名实现参考 Mixin 开发者文档  [Signing](https://developers.mixin.one/docs/api/guide#signing)，JWT Payload 多一个参数：
+The signature implementation refers to the Mixin developer document [Signing](https://developers.mixin.one/docs/api/guide#signing), and the JWT Payload has an additional parameter:
 
 JWT Payload:
 
-| 参数 | 类型 | 描述 |
-| -- | -- | -- |
-| aud | string | 必须是 ExinOne 机器人 client_id，`61103d28-3ac2-44a2-ae34-bd956070dab1`
+| Parameter | Type   | Description                                                  |
+| --------- | ------ | ------------------------------------------------------------ |
+| aud       | string | Must be the client_id of the ExinOne robot, `61103d28-3ac2-44a2-ae34-bd956070dab1` |
 
+Using the token obtained in the previous step, proceed to the next step of authorization login.
 
-使用上步获取的 token，开始下一步的授权登录。
-
-## 授权登录
+## Authorization Login
 
 <APIEndpoint method="POST" url="/mixin/me" />
 
-### Body: 
+### Body:
 
-| 参数 | 类型 | 描述 |
-| -- | -- | -- |
-| token | string | 必须，「生成 tonken」 上面获取到的 token
+| Parameter | Type   | Description                                                |
+| --------- | ------ | ---------------------------------------------------------- |
+| token     | string | Required. The token obtained in the "Generate Token" step. |
 
+### Response:
 
-### 响应：
-
-````json
+```json
 {
     "code": "0",
     "success": true,
@@ -58,6 +53,6 @@ JWT Payload:
     },
     "timestampMs": 1678874885032
 }
-````
+```
 
-上面 `data.token` 即是 ExinOne 颁发的 Token，你可以用它来调用 ExinOne API。
+The `data.token` above is the Token issued by ExinOne, which you can use to call ExinOne API.

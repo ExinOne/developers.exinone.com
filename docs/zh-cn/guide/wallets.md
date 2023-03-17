@@ -1,25 +1,29 @@
-# Wallet API
+# 钱包 API
 
-## Wallet Balance Inquiry
+## 钱包余额查询
+
 
 <APIEndpoint method="GET" url="/wallet/asset" />
 
-Headers:
 
-| Parameter     | Type   | Description  |
-| ------------- | ------ | ------------ |
-| Authorization | string | Bearer token |
 
-Params:
+Headers: 
 
-| Parameter | Type   | Description                                                  |
-| --------- | ------ | ------------------------------------------------------------ |
-| assetUuid | string | Asset UUID                                                   |
-| wallet    | string | Wallet, currently only supports querying the EPC wallet. The parameter should be "epc". |
+| 参数 | 类型 | 描述 |
+| -- | -- | -- |
+| Authorization | string | Bearer token
 
-Response:
+Params: 
 
-```json
+| 参数 | 类型 | 描述 |
+| -- | -- | -- |
+| assetUuid | string | 资产UUID
+| wallet | string | 钱包，暂只支持查询 EPC 钱包,参数为：epc
+
+
+响应：
+
+````json
 {
     "code": "0",
     "success": true,
@@ -56,4 +60,5 @@ Response:
     },
     "timestampMs": 1678852960556
 }
-```
+````
+

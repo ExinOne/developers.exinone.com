@@ -12,7 +12,10 @@ hero:
     - theme: brand
       text: Get Started
       link: /guide/getting-started
-
+    - theme: alt
+      text: 中文文档
+      link: /zh-cn/guide/getting-started
+      
 features:
   - title: "Zero Gas Fees"
     details: All ExinOne API are free to use. No gas fees.

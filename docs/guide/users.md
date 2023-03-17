@@ -1,30 +1,29 @@
-# 用户 API
+# User API
 
-此文档包含用户相关的 API。
+This document contains APIs related to users.
 
-## 用户详情
+## User Details
 
 <APIEndpoint method="GET" url="/users/me" />
 
-我们通过「用户详情」接口可以获取到用户的 EPC 钱包地址，当该钱包有足够的 EPC 时，可以抵扣支持 EPC 抵扣服务费的交易
+We can obtain the user's EPC wallet address through the "User Details" API. When the wallet has enough EPC, it can be used to deduct the service fee that supports EPC deduction for transactions.
 
-### Headers: 
+### Headers:
 
-| 参数 | 类型 | 描述 |
-| -- | -- | -- |
-| Authorization | string | Bearer token
+| Parameter     | Type   | Description  |
+| ------------- | ------ | ------------ |
+| Authorization | string | Bearer token |
 
+### Response:
 
-### 响应：
-
-````json
+```json
 {
     "code": "0",
     "success": true,
     "message": "",
     "data": {
         "uuid": "524e2f84-8756-40bb-886e-c92ce1b2e25a", // mixin client_id
-        "epcUuid": "a0655f19-554a-3ff1-98b8-491de27b901f", // epc 钱包 client_id
+        "epcUuid": "a0655f19-554a-3ff1-98b8-491de27b901f", // epc wallet client_id
         "creditTotal": "0",
         "creditUsed": "0",
         "creditAvailable": "0",
@@ -32,4 +31,4 @@
     },
     "timestampMs": 1678853464224
 }
-````
+```

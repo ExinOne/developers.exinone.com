@@ -1,24 +1,22 @@
-# 介绍
+# Introduction
 
-ExinOne 是 Mixin 生态最受欢迎的开发商 Exin 旗下一站式数字资产金融服务平台。
+ExinOne is a one-stop digital asset financial service platform under Exin, the most popular developer in the Mixin ecosystem.
 
-## 注册 Mixin 网络应用
+## Register Mixin Network Application
 
-开始之前，请先注册为 Mixin 开发人员。
+Before you begin, please register as a Mixin developer.
 
-如果您没有 Mixin Messenger，请 [下载](https://mixin.network/messenger) 它。然后按照 [这些步骤](https://developers.mixin.one/docs/dapp/getting-started/create-dapp) 注册为开发者。
+If you don't have Mixin Messenger, please [download](https://mixin.network/messenger) it. Then follow [these steps](https://developers.mixin.one/docs/dapp/getting-started/create-dapp) to register as a developer.
 
-有关 Mixin Network 的更多信息，请访问 [Mixin Developer Portal](https://developers.mixin.one/dashboard)。
+For more information about the Mixin Network, please visit the [Mixin Developer Portal](https://developers.mixin.one/dashboard).
 
-:::info 
-每个开发人员帐户可以免费创建 2 个应用程序。如果您需要更多，请向门户支付费用。 
+:::info
+Each developer account can create 2 applications for free. If you need more, please pay the fee to the portal. 
 :::
 
+## Generate Key
 
-## 生成密钥
-
-在应用程序页面上，单击『Ed25519会话』按钮以生成一个新的密钥库，其中包含敏感信息，例如应用程序的 PIN、会话 ID、PIN 令牌和私钥：
-
+On the application page, click the "Ed25519 Session" button to generate a new keystore containing sensitive information such as the PIN of the application, the session ID, the PIN token, and the private key:
 
 ```json
 {
@@ -30,10 +28,10 @@ ExinOne 是 Mixin 生态最受欢迎的开发商 Exin 旗下一站式数字资�
 }
 ```
 
-将其保存到名为`keystore.json`的文件中。
+Save it to a file named `keystore.json`.
 
-请注意，`client_id`是您的应用程序的唯一标识符，稍后您将需要它。
+Note that `client_id` is the unique identifier for your application and you will need it later.
 
-:::warning
-请注意，上述密钥和信息是在浏览器中生成的，它不会被服务器和浏览器保存，请妥善存储它，并不要与他人共享。这些信息可以转移你的全部资产。 
+:::warning 
+Please note that the above keys and information are generated in the browser and are not saved by the server and the browser. Please store them properly and do not share them with others. These can transfer all your assets. 
 :::

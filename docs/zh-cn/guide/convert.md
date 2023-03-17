@@ -1,21 +1,22 @@
-# Instant Exchange API
+# 闪兑 API
 
-ExinOne's Instant Exchange feature allows for the conversion of assets between two different cryptocurrencies. It aggregates multiple platforms and chooses the optimal trading path.
+ExinOne 的闪兑功能允许在两个币之间互相转换。聚合多个平台，选择更优的交易路径。
 
-## Instant Exchange Estimation
+## 闪兑预估
 
 <APIEndpoint method="GET" url="/convert/estimate/amount" />
 
-Params:
+Params: 
 
-| Parameter        | Type   | Description          |
-| ---------------- | ------ | -------------------- |
-| payAssetUuid     | string | Payment asset UUID   |
-| payAssetAmount   | string | Payment asset amount |
-| receiveAssetUuid | string | Buying asset UUID    |
-| withRange        | int    | 0, 1                 |
+| 参数 | 类型 | 描述 |
+| -- | -- | -- |
+| payAssetUuid | string | 支付资产UUID
+| payAssetAmount | string | 支付资产数量
+| receiveAssetUuid | string | 买入资产UUID
+| withRange | int | 0、1
 
-Response:
+
+响应：
 
 ````json
 {
@@ -75,17 +76,18 @@ Response:
 }
 ````
 
-## Query Order
+## 闪兑订单查询
 
 <APIEndpoint method="GET" url="/convert/order/detail" />
 
-Params:
+Params: 
 
-| Parameter  | Type   | Description                       |
-| ---------- | ------ | --------------------------------- |
-| payTraceId | string | trace_id generated during payment |
+| 参数 | 类型 | 描述 |
+| -- | -- | -- |
+| payTraceId | string | 支付时的 trace_id
 
-Response:
+
+响应：
 
 ````json
 {
@@ -118,36 +120,41 @@ Response:
 }
 ````
 
-## Transfer Memo Specification
+## 转账 Memo 规范
 
-Separate each field with `|` and encode with BASE64:
+
+每个字段用 `|` 隔开，并以 BASE64 编码：
+
+`ACTION|FIELD1`
+
+| 行为 | ACTION | FIELD1 |
+| ---- | ---- | ---- | 
+| 闪兑交易 | 0 | 目标资产UUID |
+
+
+::: tip
+请注意，目前对于不符合规范（不能正确解码、未用`|`分隔、ACTION 不正确等）的转账不会自动退币。
+:::
+
+
+::: warning
+初次接入时，建议小额测试。
+:::
+
+以闪兑交易兑换 BTC 举例：
+
+对以下内容：
 
 ```
-ACTION|FIELD1
-```
-
-| Action   | ACTION | FIELD1            |
-| -------- | ------ | ----------------- |
-| Exchange | 0      | Target Asset UUID |
-
-::: tip Please note that currently, transfers that do not conform to the specification (cannot be decoded correctly, not separated by `|`, incorrect ACTION, etc.) will not be automatically refunded. :::
-
-::: warning For the initial integration, it is recommended to conduct small-scale testing. :::
-
-For example, to exchange BTC with a Instant Exchange transaction:
-
-For the following content:
-
-```
-Copy code
 0|c6d0c728-2624-429b-8e0d-d9d19b6592fa
 ```
 
-Encode with BASE64 to get:
+进行 BASE64 将得到：
 
 ```
-makefileCopy code
 MHxjNmQwYzcyOC0yNjI0LTQyOWItOGUwZC1kOWQxOWI2NTkyZmE=
 ```
 
-If you need to use EPC to deduct Exin service fees, you need to register the user through the authorization interface for the first time.
+如果需要使用 EPC 抵扣 Exin 服务费，则首次使用需要通过授权接口注册用户。
+
+
