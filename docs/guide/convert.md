@@ -107,6 +107,7 @@ Response:
         "feeAssetUuid": "44adc71b-0c37-3b42-aa19-fe2d59dae5fd",
         "feeAssetSymbol": "EPC",
         "orderStatus": "done",
+        "refundStatus": "no",
         "payWalletUuid": "524e2f84-8756-40bb-886e-c92ce1b2e25a",
         "payWalletType": "mixin",
         "receiveWalletUuid": "524e2f84-8756-40bb-886e-c92ce1b2e25a",
@@ -120,19 +121,23 @@ Response:
 
 ## Transfer Memo Specification
 
-Separate each field with `|` and encode with BASE64:
+Separate each field with `#` and encode with BASE64:
 
 ```
-ACTION|FIELD1
+NAMESPACE|ACTION|FIELD1
 ```
 
-| Action   | ACTION | FIELD1            |
-| -------- | ------ | ----------------- |
-| Exchange | 0      | Target Asset UUID |
+| Action   | NAMESPACE | ACTION | FIELD1 |
+| -------- | ---- | ------ | ----------------- |
+| Convert Order | EX | CO | Target Asset UUID |
 
-::: tip Please note that currently, transfers that do not conform to the specification (cannot be decoded correctly, not separated by `|`, incorrect ACTION, etc.) will not be automatically refunded. :::
+::: tip 
+Please note that currently, transfers that do not comply with the specifications (cannot be decoded correctly, are not separated by #, have incorrect NAMESPACE or ACTION, etc.) will not be automatically refunded. 
+:::
 
-::: warning For the initial integration, it is recommended to conduct small-scale testing. :::
+::: warning 
+For the initial integration, it is recommended to conduct small-scale testing. 
+:::
 
 For example, to exchange BTC with a Instant Exchange transaction:
 
@@ -140,14 +145,14 @@ For the following content:
 
 ```
 Copy code
-0|c6d0c728-2624-429b-8e0d-d9d19b6592fa
+EX#CO#c6d0c728-2624-429b-8e0d-d9d19b6592fa
 ```
 
 Encode with BASE64 to get:
 
 ```
 makefileCopy code
-MHxjNmQwYzcyOC0yNjI0LTQyOWItOGUwZC1kOWQxOWI2NTkyZmE=
+RVgjQ08jYzZkMGM3MjgtMjYyNC00MjliLThlMGQtZDlkMTliNjU5MmZh
 ```
 
 If you need to use EPC to deduct Exin service fees, you need to register the user through the authorization interface for the first time.

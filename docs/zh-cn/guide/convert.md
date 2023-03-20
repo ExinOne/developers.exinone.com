@@ -109,6 +109,7 @@ Params:
         "feeAssetUuid": "44adc71b-0c37-3b42-aa19-fe2d59dae5fd",
         "feeAssetSymbol": "EPC",
         "orderStatus": "done",
+        "refundStatus": "no",
         "payWalletUuid": "524e2f84-8756-40bb-886e-c92ce1b2e25a",
         "payWalletType": "mixin",
         "receiveWalletUuid": "524e2f84-8756-40bb-886e-c92ce1b2e25a",
@@ -123,17 +124,17 @@ Params:
 ## 转账 Memo 规范
 
 
-每个字段用 `|` 隔开，并以 BASE64 编码：
+每个字段用 `#` 隔开，并以 BASE64 编码：
 
-`ACTION|FIELD1`
+`NAMESPACE|ACTION|FIELD1`
 
-| 行为 | ACTION | FIELD1 |
-| ---- | ---- | ---- | 
-| 闪兑交易 | 0 | 目标资产UUID |
+| 行为 | NAMESPACE | ACTION | FIELD1 |
+| ---- | ---- | ---- | ---- | 
+| 闪兑交易 | EX | CO | 目标资产UUID |
 
 
 ::: tip
-请注意，目前对于不符合规范（不能正确解码、未用`|`分隔、ACTION 不正确等）的转账不会自动退币。
+请注意，目前对于不符合规范（不能正确解码、未用`#`分隔、NAMESPACE、ACTION 等不正确等）的转账不会自动退币。
 :::
 
 
@@ -146,13 +147,13 @@ Params:
 对以下内容：
 
 ```
-0|c6d0c728-2624-429b-8e0d-d9d19b6592fa
+EX#CO#c6d0c728-2624-429b-8e0d-d9d19b6592fa
 ```
 
 进行 BASE64 将得到：
 
 ```
-MHxjNmQwYzcyOC0yNjI0LTQyOWItOGUwZC1kOWQxOWI2NTkyZmE=
+RVgjQ08jYzZkMGM3MjgtMjYyNC00MjliLThlMGQtZDlkMTliNjU5MmZh
 ```
 
 如果需要使用 EPC 抵扣 Exin 服务费，则首次使用需要通过授权接口注册用户。
