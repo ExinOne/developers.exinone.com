@@ -24,10 +24,10 @@ Params:
     "success": true,
     "message": "",
     "data": {
-        "calcSum": "0.00048558",
+        "calcSum": "0.00048558", // 预估将获得的数量
         "calcPrice": "0.000040465",
-        "isAllowEpc": true,
-        "fee": "0.0020",
+        "isAllowEpc": true, // 是否可以使用 EPC 抵扣服务费
+        "fee": "0.0020", // 服务费率
         "isReverse": false,
         "routePayAssetAmount": "0.00048558",
         "routeExchangeMax": "0.01535905",
@@ -35,7 +35,7 @@ Params:
         "delayReleaseTime": "0",
         "receiveAssetPriceUsdt": "24742.03187251",
         "payAssetPriceUsdt": "1",
-        "isTradeAvailable": true,
+        "isTradeAvailable": true, // 是否可交易
         "route": {
             "asset": [
                 {
@@ -66,7 +66,7 @@ Params:
                 }
             ]
         },
-        "range": {
+        "range": { // 支付资产支持的支付范围
             "min": "0.11",
             "max": "15",
             "withOutDelayMax": "15"
@@ -156,6 +156,9 @@ EX#CO#c6d0c728-2624-429b-8e0d-d9d19b6592fa
 RVgjQ08jYzZkMGM3MjgtMjYyNC00MjliLThlMGQtZDlkMTliNjU5MmZh
 ```
 
-如果需要使用 EPC 抵扣 Exin 服务费，则首次使用需要通过授权接口注册用户。
-
+::: tip
+- 如果需要使用 EPC 抵扣 Exin 服务费，则首次使用需要通过 [授权登录](./authentication#授权登录) 接口注册用户。
+- 授权登录后通过 [用户详情](./users#用户详情) 接口可以获得 EPC 钱包地址 `data.epcUuid`，可以向该地址转入 EPC 在交易时抵扣服务费。
+- 通过 [钱包余额查询](./wallets#钱包余额查询) 接口可以获取 EPC 余额。  
+:::
 

@@ -1,6 +1,6 @@
 # API Authorization
 
-All APIs of ExinOne require authentication. You need to provide a token issued by ExinOne to call them.
+Some of the ExinOne APIs require authentication. You need to use the token issued by ExinOne to call them.
 
 In the previous step, [Generate Key](./getting-started), a `keystore.json` file was generated. The information in this file will be used to call Mixin's APIs to obtain the `Mixin Token` issued by Mixin.
 
@@ -37,7 +37,7 @@ Using the token obtained in the previous step, proceed to the next step of autho
 
 | Parameter | Type   | Description                                                |
 | --------- | ------ | ---------------------------------------------------------- |
-| token     | string | Required. The token obtained in the "Generate Token" step. |
+| token     | string | Required. The token obtained in the "Generate Mixin Token" step. |
 
 ### Response:
 

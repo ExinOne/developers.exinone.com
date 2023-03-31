@@ -23,10 +23,10 @@ Response:
     "success": true,
     "message": "",
     "data": {
-        "calcSum": "0.00048558",
+        "calcSum": "0.00048558", // Estimated amount to be received
         "calcPrice": "0.000040465",
-        "isAllowEpc": true,
-        "fee": "0.0020",
+        "isAllowEpc": true, // Can EPC be used to offset service fees?
+        "fee": "0.0020", // Exin Fee rate
         "isReverse": false,
         "routePayAssetAmount": "0.00048558",
         "routeExchangeMax": "0.01535905",
@@ -34,7 +34,7 @@ Response:
         "delayReleaseTime": "0",
         "receiveAssetPriceUsdt": "24742.03187251",
         "payAssetPriceUsdt": "1",
-        "isTradeAvailable": true,
+        "isTradeAvailable": true, // Is trading allowed?
         "route": {
             "asset": [
                 {
@@ -155,4 +155,8 @@ makefileCopy code
 RVgjQ08jYzZkMGM3MjgtMjYyNC00MjliLThlMGQtZDlkMTliNjU5MmZh
 ```
 
-If you need to use EPC to deduct Exin service fees, you need to register the user through the authorization interface for the first time.
+::: tip
+- If you need to use EPC to deduct Exin service fees, you must register the user through the [Authorization Login](./authentication#authorization-login) interface for the first time.
+- After authorization login, you can obtain the EPC wallet address `data.epcUuid` through the [User Details](./users#user-details) interface, and you can transfer EPC to this address to offset the service fees during transactions.
+- You can check the EPC balance through the [Wallet Balance Inquiry](./wallets#wallet-balance-inquiry) interface.
+:::
