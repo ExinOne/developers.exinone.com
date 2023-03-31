@@ -1,13 +1,13 @@
 # API 授权
 
 
-ExinOne 的 API 都需要进行身份验证。你需要提供一个 ExinOne 颁发的 token 来调用它们。
+ExinOne 部分的 API 需要进行身份验证。你需要使用 ExinOne 颁发的 token 来调用它们。
 
 上面一步 [生成密钥](./getting-started) 中生成了 `keystore.json` 文件。此文件里的信息，将用来调用 Mixin 的 API 来获取 Mixin 颁发的 `Mixin Token`。
 
 ExinOne 将使用该 `Mixin Token` 获取信息并注册用户，之后返回一个 `Bearer Token` 作为 ExinOne API 的请求令牌。
 
-接下来演示下怎么操作。
+接下来演示怎么操作。
 
 ## 生成 Mixin Token
 
@@ -22,16 +22,16 @@ MixinSDK::network()
 ```
 
 
-签名实现参考 Mixin 开发者文档  [Signing](https://developers.mixin.one/docs/api/guide#signing)，签署端点 `GET https://api.mixin.one/me`，JWT Payload 多一个参数：
+签名实现参考 Mixin 开发者文档  [Signing](https://developers.mixin.one/docs/api/guide#signing)，签署端点 `GET https://api.mixin.one/me`，JWT Payload 增加一个参数：
 
 JWT Payload:
 
 | 参数 | 类型 | 描述 |
 | -- | -- | -- |
-| aud | string | 必须是 ExinOne 机器人 client_id，`61103d28-3ac2-44a2-ae34-bd956070dab1`
+| aud | string | 必须是 ExinOne 机器人 client_id，`61103d28-3ac2-44a2-ae34-bd956070dab1` |
 
 
-使用上步获取的 token，开始下一步的授权登录。
+使用上面获取的「Mixin Token」，开始下一步的授权登录。
 
 ## 授权登录
 
@@ -41,7 +41,7 @@ JWT Payload:
 
 | 参数 | 类型 | 描述 |
 | -- | -- | -- |
-| token | string | 必须，「生成 tonken」 上面获取到的 token
+| token | string | 必须，上步获取到的「Mixin Token」
 
 
 ### 响应：
