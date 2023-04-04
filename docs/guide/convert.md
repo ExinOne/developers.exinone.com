@@ -2,6 +2,54 @@
 
 ExinOne's Instant Exchange feature allows for the conversion of assets between two different cryptocurrencies. It aggregates multiple platforms and chooses the optimal trading path.
 
+## Assets
+
+<APIEndpoint method="GET" url="/convert/assets" />
+
+Response:
+
+```json
+{
+    "code": "0",
+    "success": true,
+    "message": "",
+    "data": [
+        {
+            "mixinId": "c6d0c728-2624-429b-8e0d-d9d19b6592fa",
+            "mixinChainId": "c6d0c728-2624-429b-8e0d-d9d19b6592fa",
+            "symbol": "BTC",
+            "name": "Bitcoin"
+        },
+        {
+            "mixinId": "43d61dcd-e413-450d-80b8-101d5e903357",
+            "mixinChainId": "43d61dcd-e413-450d-80b8-101d5e903357",
+            "symbol": "ETH",
+            "name": "Ether"
+        },
+        {
+            "mixinId": "f5ef6b5d-cc5a-3d90-b2c0-a2fd386e7a3c",
+            "mixinChainId": "43d61dcd-e413-450d-80b8-101d5e903357",
+            "symbol": "BOX",
+            "name": "BOX Token"
+        },
+        {
+            "mixinId": "c94ac88f-4671-3976-b60a-09064f1811e8",
+            "mixinChainId": "43d61dcd-e413-450d-80b8-101d5e903357",
+            "symbol": "XIN",
+            "name": "Mixin"
+        },
+        {
+            "mixinId": "4d8c508b-91c5-375b-92b0-ee702ed2dac5",
+            "mixinChainId": "43d61dcd-e413-450d-80b8-101d5e903357",
+            "symbol": "USDT",
+            "name": "Tether USD"
+        }
+    ],
+    "timestampMs": 1680604080799
+}
+```
+
+
 ## Instant Exchange Estimation
 
 <APIEndpoint method="GET" url="/convert/estimate/amount" />

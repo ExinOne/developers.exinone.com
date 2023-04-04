@@ -2,6 +2,54 @@
 
 ExinOne 的闪兑功能允许在两个币之间互相转换。聚合多个平台，选择更优的交易路径。
 
+## 闪兑资产
+
+<APIEndpoint method="GET" url="/convert/assets" />
+
+响应：
+
+```json
+{
+    "code": "0",
+    "success": true,
+    "message": "",
+    "data": [
+        {
+            "mixinId": "c6d0c728-2624-429b-8e0d-d9d19b6592fa",
+            "mixinChainId": "c6d0c728-2624-429b-8e0d-d9d19b6592fa",
+            "symbol": "BTC",
+            "name": "Bitcoin"
+        },
+        {
+            "mixinId": "43d61dcd-e413-450d-80b8-101d5e903357",
+            "mixinChainId": "43d61dcd-e413-450d-80b8-101d5e903357",
+            "symbol": "ETH",
+            "name": "Ether"
+        },
+        {
+            "mixinId": "f5ef6b5d-cc5a-3d90-b2c0-a2fd386e7a3c",
+            "mixinChainId": "43d61dcd-e413-450d-80b8-101d5e903357",
+            "symbol": "BOX",
+            "name": "BOX Token"
+        },
+        {
+            "mixinId": "c94ac88f-4671-3976-b60a-09064f1811e8",
+            "mixinChainId": "43d61dcd-e413-450d-80b8-101d5e903357",
+            "symbol": "XIN",
+            "name": "Mixin"
+        },
+        {
+            "mixinId": "4d8c508b-91c5-375b-92b0-ee702ed2dac5",
+            "mixinChainId": "43d61dcd-e413-450d-80b8-101d5e903357",
+            "symbol": "USDT",
+            "name": "Tether USD"
+        }
+    ],
+    "timestampMs": 1680604080799
+}
+```
+
+
 ## 闪兑预估
 
 <APIEndpoint method="GET" url="/convert/estimate/amount" />
