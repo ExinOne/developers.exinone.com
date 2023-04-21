@@ -172,12 +172,12 @@ Response:
 Separate each field with `#` and encode with BASE64:
 
 ```
-NAMESPACE|ACTION|FIELD1
+NAMESPACE|ACTION|FIELD1|FIELD2
 ```
 
-| Action   | NAMESPACE | ACTION | FIELD1 |
-| -------- | ---- | ------ | ----------------- |
-| Convert Order | EX | CO | Target Asset UUID |
+| Action   | NAMESPACE | ACTION | FIELD1 | FIELD2 |
+| -------- | ---- | ------ | ----------------- | ------ |
+| Convert Order | EX | CO | Target Asset UUID | Referral identifier is optional and can be left out if not needed |
 
 ::: tip 
 Please note that currently, transfers that do not comply with the specifications (cannot be decoded correctly, are not separated by #, have incorrect NAMESPACE or ACTION, etc.) will not be automatically refunded. 
@@ -192,16 +192,21 @@ For example, to exchange BTC with a Instant Exchange transaction:
 For the following content:
 
 ```
-Copy code
 EX#CO#c6d0c728-2624-429b-8e0d-d9d19b6592fa
 ```
 
 Encode with BASE64 to get:
 
 ```
-makefileCopy code
 RVgjQ08jYzZkMGM3MjgtMjYyNC00MjliLThlMGQtZDlkMTliNjU5MmZh
 ```
+
+Include the referral identifier:
+
+```
+EX#CO#c6d0c728-2624-429b-8e0d-d9d19b6592fa#m.xxx
+```
+
 
 ::: tip
 - If you need to use EPC to deduct Exin service fees, you must register the user through the [Authorization Login](./authentication#authorization-login) interface for the first time.

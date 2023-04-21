@@ -27,7 +27,9 @@ We can obtain the user's EPC wallet address through the "User Details" API. When
         "creditTotal": "0",
         "creditUsed": "0",
         "creditAvailable": "0",
-        "creditUpdatedAt": 1677207797
+        "creditUpdatedAt": 1677207797,
+        "percentage": "0.1", // Commission rate
+        "ref": "m.3740051", // Referral identifier
     },
     "timestampMs": 1678853464224
 }

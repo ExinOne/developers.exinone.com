@@ -174,11 +174,11 @@ Params:
 
 每个字段用 `#` 隔开，并以 BASE64 编码：
 
-`NAMESPACE|ACTION|FIELD1`
+`NAMESPACE|ACTION|FIELD1|FIELD2`
 
-| 行为 | NAMESPACE | ACTION | FIELD1 |
-| ---- | ---- | ---- | ---- | 
-| 闪兑交易 | EX | CO | 目标资产UUID |
+| 行为 | NAMESPACE | ACTION | FIELD1 | FIELD2 |
+| ---- | ---- | ---- | ---- | ---- | 
+| 闪兑交易 | EX | CO | 目标资产UUID | 返佣标识，可以不传 |
 
 
 ::: tip
@@ -202,6 +202,11 @@ EX#CO#c6d0c728-2624-429b-8e0d-d9d19b6592fa
 
 ```
 RVgjQ08jYzZkMGM3MjgtMjYyNC00MjliLThlMGQtZDlkMTliNjU5MmZh
+```
+
+携带返佣标识：
+```
+EX#CO#c6d0c728-2624-429b-8e0d-d9d19b6592fa#m.xxx
 ```
 
 ::: tip
