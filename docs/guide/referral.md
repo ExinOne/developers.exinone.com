@@ -33,7 +33,7 @@ Once registration is successful, you will receive an EPC transfer from ExinOne. 
 {
     "t":"REF_REG",
     "f": "xx-xxx-xxx", // trace_id
-    "ref":"m.xxxxx", // rebate code
+    "ref":"m.xxxxx", // Referral identifier
 }
 ````
 

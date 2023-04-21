@@ -204,12 +204,17 @@ RVgjQ08jYzZkMGM3MjgtMjYyNC00MjliLThlMGQtZDlkMTliNjU5MmZh
 Include the referral identifier:
 
 ```
-EX#CO#c6d0c728-2624-429b-8e0d-d9d19b6592fa#m.xxx
+EX#CO#c6d0c728-2624-429b-8e0d-d9d19b6592fa#m.3740051
 ```
 
+Encode with BASE64 to get:
+
+```
+RVgjQ08jYzZkMGM3MjgtMjYyNC00MjliLThlMGQtZDlkMTliNjU5MmZhI20uMzc0MDA1MQ==
+```
 
 ::: tip
 - If you need to use EPC to deduct Exin service fees, you must register the user through the [Authorization Login](./authentication#authorization-login) interface for the first time.
-- After authorization login, you can obtain the EPC wallet address `data.epcUuid` through the [User Details](./users#user-details) interface, and you can transfer EPC to this address to offset the service fees during transactions.
+- After authorization login, you can obtain the EPC wallet address `data.epcUuid` through the [User Details](./users#user-details) interface, and you can transfer EPC to this address to offset the service fees during transactions. The referral identifier is `data.ref`.
 - You can check the EPC balance through the [Wallet Balance Inquiry](./wallets#wallet-balance-inquiry) interface.
 :::

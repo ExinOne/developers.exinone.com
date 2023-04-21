@@ -206,12 +206,18 @@ RVgjQ08jYzZkMGM3MjgtMjYyNC00MjliLThlMGQtZDlkMTliNjU5MmZh
 
 携带返佣标识：
 ```
-EX#CO#c6d0c728-2624-429b-8e0d-d9d19b6592fa#m.xxx
+EX#CO#c6d0c728-2624-429b-8e0d-d9d19b6592fa#m.3740051
+```
+
+进行 BASE64 将得到：
+
+```
+RVgjQ08jYzZkMGM3MjgtMjYyNC00MjliLThlMGQtZDlkMTliNjU5MmZhI20uMzc0MDA1MQ==
 ```
 
 ::: tip
 - 如果需要使用 EPC 抵扣 Exin 服务费，则首次使用需要通过 [授权登录](./authentication#授权登录) 接口注册用户。
-- 授权登录后通过 [用户详情](./users#用户详情) 接口可以获得 EPC 钱包地址 `data.epcUuid`，可以向该地址转入 EPC 在交易时抵扣服务费。
+- 授权登录后通过 [用户详情](./users#用户详情) 接口可以获得 EPC 钱包地址 `data.epcUuid`，可以向该地址转入 EPC 在交易时抵扣服务费。返佣标识为 `data.ref`。
 - 通过 [钱包余额查询](./wallets#钱包余额查询) 接口可以获取 EPC 余额。  
 :::
 
