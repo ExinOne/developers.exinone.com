@@ -28,8 +28,41 @@
         "creditTotal": "0",
         "creditUsed": "0",
         "creditAvailable": "0",
-        "creditUpdatedAt": 1677207797
+        "creditUpdatedAt": 1677207797,
+        "ref": "m.3740051", // 返佣标识
+        "refPercentage": "0.1" // 返佣比例
     },
     "timestampMs": 1678853464224
+}
+````
+
+## 返佣统计
+
+<APIEndpoint method="GET" url="/referral_statistics/me" />
+
+该接口返回返佣相关数据
+
+### Headers: 
+
+| 参数 | 类型 | 描述 |
+| -- | -- | -- |
+| Authorization | string | Bearer token
+
+
+### 响应：
+
+````json
+{
+    "code": "0",
+    "success": true,
+    "message": "",
+    "data": {
+        "percentage": "0.1", // 返佣比例
+        "ref": "m.37400517", // 返佣标识
+        "usdtAmountTotal": "0", // 返佣获得的 USDT 数量
+        "epcAmountTotal": "0.195", // 返佣获得的 EPC 数量
+        "count": 1 // 返佣总笔数
+    },
+    "timestampMs": 1682058015939
 }
 ````

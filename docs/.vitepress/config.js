@@ -21,6 +21,7 @@ export default {
             { text: 'Users', link: '/guide/users' },
             { text: 'Wallets', link: '/guide/wallets' },
             { text: 'Convert', link: '/guide/convert' },
+            { text: 'Referral', link: '/guide/referral' },
           ]
         },
       ],
@@ -38,6 +39,7 @@ export default {
             { text: '用户', link: '/zh-cn/guide/users' },
             { text: '钱包', link: '/zh-cn/guide/wallets' },
             { text: '闪兑', link: '/zh-cn/guide/convert' },
+            { text: '返佣', link: '/zh-cn/guide/referral' },
           ]
         },
       ],
