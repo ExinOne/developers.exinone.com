@@ -171,6 +171,12 @@ Response:
 
 <APIEndpoint method="GET" url="/convert/order/lists" />
 
+Headers:
+
+| Parameter     | Type   | Description  |
+| ------------- | ------ | ------------ |
+| Authorization | string | Bearer token |
+
 Params:
 
 | Parameter | Type | Description |
