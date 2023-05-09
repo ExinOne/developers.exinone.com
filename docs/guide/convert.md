@@ -167,6 +167,93 @@ Response:
 }
 ````
 
+## Instant Exchange Order List
+
+<APIEndpoint method="GET" url="/convert/order/lists" />
+
+Params:
+
+| Parameter | Type | Description |
+| -- | -- | -- |
+| page | int | Optional, page number |
+| limit | int | Optional, items per page |
+| dateStart | timestamp | Optional, start timestamp |
+| dateEnd | timestamp | Optional, end timestamp |
+
+::: tip
+Successful transaction orderStatus:done refundStatus:no
+
+Failed transaction orderStatus:done refundStatus:done
+:::
+
+Response:
+
+````json
+{
+    "code": "0",
+    "success": true,
+    "message": "",
+    "data": [
+        {
+            "id": 8240936,
+            "source": "snapshot",
+            "payAssetUuid": "4d8c508b-91c5-375b-92b0-ee702ed2dac5",
+            "payAssetSymbol": "USDT",
+            "payAmount": "20.00000000",
+            "payTraceId": "60f4da0c-5b8b-e008-37b3-7657710fb4b5",
+            "receiveTraceId": "4ac32aee-2310-4cca-aab0-85f7aa733701",
+            "receiveAssetUuid": "dcde18b9-f015-326f-b8b1-5b820a060e44",
+            "receiveAssetSymbol": "SHIB",
+            "receiveAmount": "2200661.52149944",
+            "estimateReceiveAmount": "2200670.32418074",
+            "feeAmount": "4.00520397",
+            "feeAssetUuid": "44adc71b-0c37-3b42-aa19-fe2d59dae5fd",
+            "feeAssetSymbol": "EPC",
+            "orderStatus": "done",
+            "refundStatus": "no",
+            "payWalletUuid": "53fda963-ed6e-417e-bd22-ab16711f8b0d",
+            "payWalletType": "mixin",
+            "receiveWalletUuid": "53fda963-ed6e-417e-bd22-ab16711f8b0d",
+            "receiveWalletType": "mixin",
+            "createdAt": 1683514948,
+            "updatedAt": 1683514952
+        },
+        {
+            "id": 8240789,
+            "source": "snapshot",
+            "payAssetUuid": "4d8c508b-91c5-375b-92b0-ee702ed2dac5",
+            "payAssetSymbol": "USDT",
+            "payAmount": "40.00000000",
+            "payTraceId": "805ec0d9-7b2c-7488-3c72-ea6afdd77202",
+            "receiveTraceId": "e1f76b5a-039b-4fec-ad69-8fd65ace948a",
+            "receiveAssetUuid": "dcde18b9-f015-326f-b8b1-5b820a060e44",
+            "receiveAssetSymbol": "SHIB",
+            "receiveAmount": "4406181.01545253",
+            "estimateReceiveAmount": "4401340.64836149",
+            "feeAmount": "8.01924945",
+            "feeAssetUuid": "44adc71b-0c37-3b42-aa19-fe2d59dae5fd",
+            "feeAssetSymbol": "EPC",
+            "orderStatus": "done",
+            "refundStatus": "no",
+            "payWalletUuid": "53fda963-ed6e-417e-bd22-ab16711f8b0d",
+            "payWalletType": "mixin",
+            "receiveWalletUuid": "53fda963-ed6e-417e-bd22-ab16711f8b0d",
+            "receiveWalletType": "mixin",
+            "createdAt": 1683514842,
+            "updatedAt": 1683514846
+        }
+    ],
+    "meta": {
+        "total": 350,
+        "count": 2,
+        "perPage": 2,
+        "currentPage": 1,
+        "nextLink": "https://app.eiduwejdk.com/api/v2/convert/order/lists?page=2"
+    },
+    "timestampMs": 1683598283002
+}
+````
+
 ## Transfer Memo Specification
 
 Separate each field with `#` and encode with BASE64:

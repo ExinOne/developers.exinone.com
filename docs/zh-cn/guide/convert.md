@@ -124,7 +124,7 @@ Params:
 }
 ````
 
-## 闪兑订单查询
+## 闪兑订单详情
 
 <APIEndpoint method="GET" url="/convert/order/detail" />
 
@@ -166,6 +166,93 @@ Params:
         "updatedAt": 1678861880
     },
     "timestampMs": 1678934766624
+}
+````
+
+## 闪兑订单列表
+
+<APIEndpoint method="GET" url="/convert/order/lists" />
+
+Params: 
+
+| 参数 | 类型 | 描述 |
+| -- | -- | -- |
+| page | int | 可选，页码 |
+| limit | int | 可选，每页数量 |
+| dateStart | timestamp | 可选，开始时间戳 |
+| dateEnd | timestamp | 可选，结束时间戳 |
+
+::: tip
+交易成功 orderStatus:done refundStatus:no
+
+交易失败 orderStatus:done refundStatus:done
+:::
+
+响应：
+
+````json
+{
+    "code": "0",
+    "success": true,
+    "message": "",
+    "data": [
+        {
+            "id": 8240936,
+            "source": "snapshot",
+            "payAssetUuid": "4d8c508b-91c5-375b-92b0-ee702ed2dac5",
+            "payAssetSymbol": "USDT",
+            "payAmount": "20.00000000",
+            "payTraceId": "60f4da0c-5b8b-e008-37b3-7657710fb4b5",
+            "receiveTraceId": "4ac32aee-2310-4cca-aab0-85f7aa733701",
+            "receiveAssetUuid": "dcde18b9-f015-326f-b8b1-5b820a060e44",
+            "receiveAssetSymbol": "SHIB",
+            "receiveAmount": "2200661.52149944",
+            "estimateReceiveAmount": "2200670.32418074",
+            "feeAmount": "4.00520397",
+            "feeAssetUuid": "44adc71b-0c37-3b42-aa19-fe2d59dae5fd",
+            "feeAssetSymbol": "EPC",
+            "orderStatus": "done",
+            "refundStatus": "no",
+            "payWalletUuid": "53fda963-ed6e-417e-bd22-ab16711f8b0d",
+            "payWalletType": "mixin",
+            "receiveWalletUuid": "53fda963-ed6e-417e-bd22-ab16711f8b0d",
+            "receiveWalletType": "mixin",
+            "createdAt": 1683514948,
+            "updatedAt": 1683514952
+        },
+        {
+            "id": 8240789,
+            "source": "snapshot",
+            "payAssetUuid": "4d8c508b-91c5-375b-92b0-ee702ed2dac5",
+            "payAssetSymbol": "USDT",
+            "payAmount": "40.00000000",
+            "payTraceId": "805ec0d9-7b2c-7488-3c72-ea6afdd77202",
+            "receiveTraceId": "e1f76b5a-039b-4fec-ad69-8fd65ace948a",
+            "receiveAssetUuid": "dcde18b9-f015-326f-b8b1-5b820a060e44",
+            "receiveAssetSymbol": "SHIB",
+            "receiveAmount": "4406181.01545253",
+            "estimateReceiveAmount": "4401340.64836149",
+            "feeAmount": "8.01924945",
+            "feeAssetUuid": "44adc71b-0c37-3b42-aa19-fe2d59dae5fd",
+            "feeAssetSymbol": "EPC",
+            "orderStatus": "done",
+            "refundStatus": "no",
+            "payWalletUuid": "53fda963-ed6e-417e-bd22-ab16711f8b0d",
+            "payWalletType": "mixin",
+            "receiveWalletUuid": "53fda963-ed6e-417e-bd22-ab16711f8b0d",
+            "receiveWalletType": "mixin",
+            "createdAt": 1683514842,
+            "updatedAt": 1683514846
+        }
+    ],
+    "meta": {
+        "total": 350,
+        "count": 2,
+        "perPage": 2,
+        "currentPage": 1,
+        "nextLink": "https://app.eiduwejdk.com/api/v2/convert/order/lists?page=2"
+    },
+    "timestampMs": 1683598283002
 }
 ````
 
