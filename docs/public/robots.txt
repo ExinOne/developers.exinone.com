@@ -1,0 +1,13 @@
+# so.com chinese search engine
+User-agent: 360Spider
+User-agent: 360Spider-Image
+User-agent: 360Spider-Video
+# baidu.com chinese search engine
+User-agent: Baiduspider
+User-agent: Baiduspider-image
+User-agent: Baiduspider-news
+User-agent: Baiduspider-video
+Disallow: /
+
+User-agent: *
+Allow: /
