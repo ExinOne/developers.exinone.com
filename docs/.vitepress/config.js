@@ -22,6 +22,8 @@ export default {
             { text: 'Wallets', link: '/guide/wallets' },
             { text: 'Convert', link: '/guide/convert' },
             { text: 'Referral', link: '/guide/referral' },
+            { text: 'Trading acct.', link: '/guide/fundpool' },
+            { text: 'Loan', link: '/guide/loan' },
           ]
         },
       ],
@@ -40,6 +42,8 @@ export default {
             { text: '钱包', link: '/zh-cn/guide/wallets' },
             { text: '闪兑', link: '/zh-cn/guide/convert' },
             { text: '返佣', link: '/zh-cn/guide/referral' },
+            { text: '资金账户', link: '/zh-cn/guide/fundpool' },
+            { text: '借贷', link: '/zh-cn/guide/loan' },
           ]
         },
       ],
