@@ -58,9 +58,10 @@ Headers:
 
 Params:
 
-| Parameter | Type   | Description            |
-|-----------|--------|------------------------|
-| assetUuid | string | UUID of the loan asset |
+| Parameter | Type   | Description                                                               |
+|-----------|--------|---------------------------------------------------------------------------|
+| assetUuid | string | UUID of the loan asset                                                    |
+| wallet    | string | Optional, the default lending wallet is mixin, optional value is fundpool |
 
 Response:
 

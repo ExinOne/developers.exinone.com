@@ -57,9 +57,10 @@ Headers:
 
 Params:
 
-| 参数        | 类型     | 描述        |
-|-----------|--------|-----------|
-| assetUuid | string | 借贷的资产UUID |
+| 参数        | 类型     | 描述                            |
+|-----------|--------|-------------------------------|
+| assetUuid | string | 借贷的资产UUID                     |
+| wallet    | string | 可选，放款钱包默认 mixin, 可选值 fundpool |
 
 响应：
 

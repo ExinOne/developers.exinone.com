@@ -247,3 +247,34 @@ Body:
 ```
 
 然后进行 EPC 鉴权操作
+
+## 闪兑
+
+闪兑和提现操作一样，只不过获取 `followId` 时，参数有变化
+
+Body:
+
+| 参数             | 类型     | 描述                  |
+|----------------|--------|---------------------|
+| type           | string | convert             |
+| payWallet      | string | fundpool            |
+| payAssetUuid   | string | 需支付的资产              |
+| payAssetAmount | string | 需支付的数量              |
+| receiveWallet  | string | 收款钱包，mixin,fundpool |
+| memo           | string | 闪兑交易的memo           |
+| traceId        | string | 可选，可以指定             |
+
+响应：
+
+```json
+{
+  "code": 0,
+  "success": true,
+  "message": "",
+  "data": {
+    "followId": "ce9a577e-50de-4a65-ab8a-5383f1a6e78d"
+  }
+}
+```
+
+然后进行 EPC 鉴权操作

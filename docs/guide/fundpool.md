@@ -153,7 +153,7 @@ Body:
 | payAssetUuid   | string | Asset to be withdrawn                                                      |
 | payAssetAmount | string | Amount of asset to be withdrawn                                            |
 | receiveWallet  | string | mixin                                                                      |
-| traceId        | string | Optional, if filled in, the withdrawal will be transferred with this trace 
+| traceId        | string | Optional, if filled in, the withdrawal will be transferred with this trace |
 
 _id, note that it cannot be used before |
 
@@ -236,6 +236,38 @@ Body:
 | payAssetUuid   | string | The asset to be repaid                          |
 | payAssetAmount | string | The amount of asset to be repaid                |
 | applyTraceId   | string | The applyTraceId of the loan order to be repaid |
+
+Response:
+
+```json
+{
+  "code": 0,
+  "success": true,
+  "message": "",
+  "data": {
+    "followId": "ce9a577e-50de-4a65-ab8a-5383f1a6e78d"
+  }
+}
+```
+
+Then perform the EPC authentication operation.
+
+## Instant Exchange
+
+The Instant Exchange operation is the same as the withdrawal operation, except that when getting `followId`, the
+parameters change.
+
+Body:
+
+| Parameter      | Type   | Description                       |
+|----------------|--------|-----------------------------------|
+| type           | string | convert                           |
+| payWallet      | string | fundpool                          |
+| payAssetUuid   | string | Asset to be paid                  |
+| payAssetAmount | string | Amount to be paid                 |
+| receiveWallet  | string | Receiving wallet, mixin, fundpool |
+| memo           | string | Memo for the instant exchange     |
+| traceId        | string | Optional, can be specified        |
 
 Response:
 
