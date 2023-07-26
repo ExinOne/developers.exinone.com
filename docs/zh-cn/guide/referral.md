@@ -60,11 +60,16 @@ RVgjUkVGX1JFRw==
     "success": true,
     "message": "",
     "data": {
-        "percentage": "0.1", // 返佣比例
-        "ref": "m.37400517", // 返佣标识
-        "usdtAmountTotal": "0", // 返佣获得的 USDT 数量
-        "epcAmountTotal": "0.195", // 返佣获得的 EPC 数量
-        "count": 1 // 返佣总笔数
+        // 返佣比例
+        "percentage": "0.1",
+        // 返佣标识
+        "ref": "m.37400517",
+        // 返佣获得的 USDT 数量
+        "usdtAmountTotal": "0",
+        // 返佣获得的 EPC 数量
+        "epcAmountTotal": "0.195",
+        // 返佣总笔数
+        "count": 1
     },
     "timestampMs": 1682058015939
 }

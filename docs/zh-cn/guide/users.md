@@ -23,14 +23,18 @@
     "success": true,
     "message": "",
     "data": {
-        "uuid": "524e2f84-8756-40bb-886e-c92ce1b2e25a", // mixin client_id
-        "epcUuid": "a0655f19-554a-3ff1-98b8-491de27b901f", // epc 钱包 client_id
+        // mixin client_id
+        "uuid": "524e2f84-8756-40bb-886e-c92ce1b2e25a",
+        // epc 钱包 client_id
+        "epcUuid": "a0655f19-554a-3ff1-98b8-491de27b901f",
         "creditTotal": "0",
         "creditUsed": "0",
         "creditAvailable": "0",
         "creditUpdatedAt": 1677207797,
-        "ref": "m.3740051", // 返佣标识
-        "refPercentage": "0.1" // 返佣比例
+        // 返佣标识
+        "ref": "m.3740051",
+        // 返佣比例
+        "refPercentage": "0.1"
     },
     "timestampMs": 1678853464224
 }
@@ -57,11 +61,16 @@
     "success": true,
     "message": "",
     "data": {
-        "percentage": "0.1", // 返佣比例
-        "ref": "m.37400517", // 返佣标识
-        "usdtAmountTotal": "0", // 返佣获得的 USDT 数量
-        "epcAmountTotal": "0.195", // 返佣获得的 EPC 数量
-        "count": 1 // 返佣总笔数
+        // 返佣比例
+        "percentage": "0.1",
+        // 返佣标识
+        "ref": "m.37400517",
+        // 返佣获得的 USDT 数量
+        "usdtAmountTotal": "0",
+        // 返佣获得的 EPC 数量
+        "epcAmountTotal": "0.195",
+        // 返佣总笔数
+        "count": 1
     },
     "timestampMs": 1682058015939
 }

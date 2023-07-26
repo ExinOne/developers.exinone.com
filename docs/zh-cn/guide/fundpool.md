@@ -55,15 +55,15 @@ Headers:
       {
         "parentAssetId": 4,
         "parentAssetSymbol": "USDT",
-        "parentAssetCreditRate": "0.90",
         // 资产分比例 （资产分 = 资产分比例 * 资产价值）
+        "parentAssetCreditRate": "0.90",
         "priceUsdt": 1,
-        "defaultAssetUuid": "4d8c508b-91c5-375b-92b0-ee702ed2dac5",
         // 资产分 UUID
-        "balance": "21.25194099",
+        "defaultAssetUuid": "4d8c508b-91c5-375b-92b0-ee702ed2dac5",
         // 资产余额
-        "canReceive": true,
+        "balance": "21.25194099",
         // 是否可以接收资产
+        "canReceive": true,
         "balanceUsdt": 21.25
       },
       {

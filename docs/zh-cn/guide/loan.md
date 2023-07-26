@@ -20,26 +20,26 @@ Headers:
   "success": true,
   "message": "",
   "data": {
-    "stopLoan": false,
     // 是否停止借贷，true 为停止
-    "availableAmount": "18",
+    "stopLoan": false,
     // 可借的 USDT 价值
-    "minimumLimit": "1",
+    "availableAmount": "18",
     // 最小的借贷 USDT 价值
-    "dailyInterestRate": "0.0004",
+    "minimumLimit": "1",
     // 日利率
-    "dailyOverdueRate": "0.005",
+    "dailyInterestRate": "0.0004",
     // 逾期日利率
-    "outstanding": "1",
+    "dailyOverdueRate": "0.005",
     // 借贷笔数
-    "borrowings": "1.00039984",
+    "outstanding": "1",
     // 借贷 USDT 总额
-    "interest": "0.00040016",
+    "borrowings": "1.00039984",
     // 借贷 USDT 利息总额
-    "overdue": "0",
+    "interest": "0.00040016",
     // 逾期 USDT 总额
-    "marginRate": "21.0375"
+    "overdue": "0",
     // 质押率, 小于1.1 会爆仓
+    "marginRate": "21.0375"
   },
   "timestampMs": 1689218215520
 }
