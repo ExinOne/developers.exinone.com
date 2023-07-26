@@ -214,8 +214,8 @@ ExinOne 会携带特定 memo 退回 EPC,memo 为 BASE64 JSON 字符串，JSON �
 ````json
 {
   "S": "EPC_AUTH_TRANS_RF",
-  "O": "$trace_id"
   // EPC 鉴权时转账的 trace_id
+  "O": "$trace_id"
 }
 ````
 

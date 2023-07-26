@@ -70,24 +70,24 @@ Params:
   "success": true,
   "message": "",
   "data": {
-    "stopLoan": false,
     // 是否停止借贷，true 为停止
-    "assetUuid": "c6d0c728-2624-429b-8e0d-d9d19b6592fa",
+    "stopLoan": false,
     // 资产 UUID
-    "assetUsdtPrice": "30180",
+    "assetUuid": "c6d0c728-2624-429b-8e0d-d9d19b6592fa",
     // 资产 USDT 价格
-    "assetSymbol": "BTC",
+    "assetUsdtPrice": "30180",
     // 资产符号
-    "availableUsdtAmount": "95",
+    "assetSymbol": "BTC",
     // 可借的 USDT 价值
-    "availableAmount": "0.00156383",
+    "availableUsdtAmount": "95",
     // 可借的资产数量
-    "marginRate": "100",
+    "availableAmount": "0.00156383",
     // 质押率, 小于1.1 会爆仓
-    "dailyInterestRate": "0",
+    "marginRate": "100",
     // 日利率
-    "dailyOverdueRate": "0"
+    "dailyInterestRate": "0",
     // 逾期日利率
+    "dailyOverdueRate": "0"
   },
   "timestampMs": 1689647813510
 }
@@ -107,7 +107,7 @@ Params:
 |------|-----------|--------|----------|--------|--------|---------------------------------|
 | 申请借贷 | EX        | CB     | 借贷资产UUID | 借贷天数   | 借贷金额   | 放款钱包，可选，默认为 M:mixin 钱包。 FP:资金账户 |
 
-::: tip
+:::tip
 转账的 trace_id 最好指定，方便追踪借贷状态
 :::
 
@@ -134,8 +134,8 @@ ExinOne 会携带特定 memo 转对应资产到放款钱包,memo 为 BASE64 JSON
 ````json
 {
   "S": "LO",
-  "O": "$apply_trace_id"
   // 申请借贷时转账的 trace_id
+  "O": "$apply_trace_id"
 }
 ````
 
@@ -146,8 +146,8 @@ ExinOne 会携带特定 memo 退回 EPC,memo 为 BASE64 JSON 字符串，JSON �
 ````json
 {
   "S": "LOAN_APPLY_RF",
-  "O": "$apply_trace_id"
   // 申请借贷时转账的 trace_id
+  "O": "$apply_trace_id"
 }
 ````
 
@@ -197,55 +197,55 @@ Params:
       "symbol": "USDT"
       // ......
     },
-    "loanAmount": "2",
     // 借贷的金额
-    "sendAmount": "2",
+    "loanAmount": "2",
     // 实际转账的金额
-    "term": 3650,
+    "sendAmount": "2",
     // 借贷天数
-    "loanDate": 1689177600,
+    "term": 3650,
     // 借贷时间
-    "wallet": "mixin",
+    "loanDate": 1689177600,
     // 放款钱包
+    "wallet": "mixin",
     "reason": null,
-    "status": "repaying",
     // 借贷状态
-    "hasRepaid": false,
+    "status": "repaying",
     //  是否已还款
-    "dailyInterestAmount": "0.0004",
+    "hasRepaid": false,
     // 日利息
-    "dailyOverdueAmount": "0.005",
+    "dailyInterestAmount": "0.0004",
     // 逾期日利息
-    "finalRepaymentDate": 2004537600,
+    "dailyOverdueAmount": "0.005",
     // 最后还款时间
-    "useDays": 1,
+    "finalRepaymentDate": 2004537600,
     // 已使用天数
-    "repayAmount": "0.99960016",
+    "useDays": 1,
     // 已还款金额
-    "debtAmount": "1.00039984",
+    "repayAmount": "0.99960016",
     // 剩余借贷本金
-    "interestAmount": "0.00039984",
+    "debtAmount": "1.00039984",
     // 已还利息
-    "overdueAmount": "0",
+    "interestAmount": "0.00039984",
     // 已还逾期金额
-    "repayDate": 1689177600,
+    "overdueAmount": "0",
     // 还款时间
-    "nextRepaymentDate": 1691856000,
+    "repayDate": 1689177600,
     // 下次还款时间
-    "applyTraceId": "90e58999-29f7-2903-6bf5-93759a573c53",
+    "nextRepaymentDate": 1691856000,
     // 申请借贷时转账的trace_id
+    "applyTraceId": "90e58999-29f7-2903-6bf5-93759a573c53",
     "createdAt": 1689217776,
     "updatedAt": 1689218030,
     "appliedAt": 1689217822,
     "loanedAt": 1689217826,
-    "totalPending": "1.0008",
     // 总待还款金额
-    "borrowingsPending": "1.00039984",
+    "totalPending": "1.0008",
     // 待还款本金
-    "overduePending": "0",
+    "borrowingsPending": "1.00039984",
     // 待还款逾期金额
-    "interestPending": "0.00040016"
+    "overduePending": "0",
     // 待还款利息
+    "interestPending": "0.00040016"
   },
   "timestampMs": 1689218703050
 }
