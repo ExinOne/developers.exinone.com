@@ -283,3 +283,47 @@ Response:
 ```
 
 Then perform the EPC authentication operation.
+
+## Instant Exchange Payment V2
+
+This interface can be used for quick payment from the trading account without going through authentication.
+
+<APIEndpoint method="POST" url="/convert/pay" />
+
+Headers:
+
+| Parameter     | Type   | Description  |
+|---------------|--------|--------------|
+| Authorization | string | Bearer token |
+
+Body:
+
+| Parameter      | Type   | Description                                                                                                |
+|----------------|--------|------------------------------------------------------------------------------------------------------------|
+| payWallet      | string | fundpool                                                                                                   |
+| payAssetUuid   | string | Asset to be paid                                                                                           |
+| payAssetAmount | string | Amount to be paid                                                                                          |
+| memo           | string | Memo for the instant exchange                                                                              |
+| traceId        | string | Optional, if filled in, this payment will transfer with this trace_id, note that it cannot be already used |
+
+Response:
+
+```json
+{
+  "code": "0",
+  "success": true,
+  "message": "",
+  "data": [],
+  "timestampMs": 1690425723192
+}
+```
+
+```json
+{
+  "code": "20005",
+  "success": false,
+  "message": "余额不足",
+  "data": [],
+  "timestampMs": 1690427314312
+}
+```

@@ -128,16 +128,27 @@ RVgjQ0IjYzZkMGM3MjgtMjYyNC00MjliLThlMGQtZDlkMTliNjU5MmZhIzM2NTAjMC41
 
 ### Result
 
-- Successful loan
+- Disbursing to Mixin Wallet
 
-ExinOne will transfer the corresponding assets to the loan wallet with a specific memo. The memo is a BASE64 JSON
-string, and the JSON object format is as follows:
+ExinOne will transfer the corresponding assets to the disbursement wallet with a specific memo, which is a BASE64 JSON string. The format of the JSON object is as follows:
 
 ```json
 {
   "S": "LO",
+  // The trace_id when applying for the loan
   "O": "$apply_trace_id"
+}
+```
+
+-  Loan Successful
+
+ExinOne will transfer the EPC with a specific memo. The memo is a BASE64 JSON string, and the JSON object format is as follows:
+
+```json
+{
+  "S": "LOAN_APPLY_PASS",
   // trace_id of the transfer when applying for a loan
+  "O": "$apply_trace_id"
 }
 ```
 
@@ -149,7 +160,7 @@ follows:
 ```json
 {
   "S": "LO",
-  "O": "$apply_trace_id"
   // trace_id of the transfer when applying for a loan
+  "O": "$apply_trace_id"
 }
 ```

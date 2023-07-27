@@ -42,7 +42,7 @@ export default {
             { text: '钱包', link: '/zh-cn/guide/wallets' },
             { text: '闪兑', link: '/zh-cn/guide/convert' },
             { text: '返佣', link: '/zh-cn/guide/referral' },
-            { text: '资金账户', link: '/zh-cn/guide/fundpool' },
+            { text: '交易账户', link: '/zh-cn/guide/fundpool' },
             { text: '借贷', link: '/zh-cn/guide/loan' },
           ]
         },

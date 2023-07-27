@@ -278,3 +278,47 @@ Body:
 ```
 
 然后进行 EPC 鉴权操作
+
+## 闪兑支付V2
+
+通过该接口可快速使用交易账户支付，无需走鉴权。
+
+<APIEndpoint method="POST" url="/convert/pay" />
+
+Headers:
+
+| 参数            | 类型     | 描述           |
+|---------------|--------|--------------|
+| Authorization | string | Bearer token |
+
+Body:
+
+| 参数             | 类型     | 描述                                 |
+|----------------|--------|------------------------------------|
+| payWallet      | string | fundpool                           |
+| payAssetUuid   | string | 支付的资产                              |
+| payAssetAmount | string | 支付资产的数量                            |
+| memo           | string | 闪兑交易的memo                          |
+| traceId        | string | 可选，填入后该笔支付将以此trace_id转账，注意不能是已使用过的 |
+
+响应：
+
+```json
+{
+  "code": "0",
+  "success": true,
+  "message": "",
+  "data": [],
+  "timestampMs": 1690425723192
+}
+```
+
+```json
+{
+  "code": "20005",
+  "success": false,
+  "message": "余额不足",
+  "data": [],
+  "timestampMs": 1690427314312
+}
+```

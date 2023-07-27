@@ -107,7 +107,7 @@ Params:
 |------|-----------|--------|----------|--------|--------|---------------------------------|
 | 申请借贷 | EX        | CB     | 借贷资产UUID | 借贷天数   | 借贷金额   | 放款钱包，可选，默认为 M:mixin 钱包。 FP:资金账户 |
 
-:::tip
+::: tip
 转账的 trace_id 最好指定，方便追踪借贷状态
 :::
 
@@ -127,13 +127,25 @@ RVgjQ0IjYzZkMGM3MjgtMjYyNC00MjliLThlMGQtZDlkMTliNjU5MmZhIzM2NTAjMC41
 
 ### 结果
 
-- 借贷成功
+- 放款到 Mixin 钱包
 
 ExinOne 会携带特定 memo 转对应资产到放款钱包,memo 为 BASE64 JSON 字符串，JSON 对象格式如下：
 
 ````json
 {
   "S": "LO",
+  // 申请借贷时转账的 trace_id
+  "O": "$apply_trace_id"
+}
+````
+
+- 借贷成功
+
+ExinOne 会携带特定 memo 转回 EPC，memo 为 BASE64 JSON 字符串，JSON 对象格式如下：
+
+````json
+{
+  "S": "LOAN_APPLY_PASS",
   // 申请借贷时转账的 trace_id
   "O": "$apply_trace_id"
 }
