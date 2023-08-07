@@ -306,6 +306,18 @@ Body:
 | memo           | string | Memo for the instant exchange                                                                              |
 | traceId        | string | Optional, if filled in, this payment will transfer with this trace_id, note that it cannot be already used |
 
+::: tip
+Please specify the receiving account in the memo. Add a 'W' field in the memo data. If not specified, the default is the Mixin Wallet. Optional values are FP (transaction account) and M (Mixin Wallet), for example:
+
+```json
+{
+  "W": "FP"
+}
+```
+
+:::
+
+
 Response:
 
 ```json

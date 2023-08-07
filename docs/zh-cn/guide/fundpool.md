@@ -301,6 +301,17 @@ Body:
 | memo           | string | 闪兑交易的memo                          |
 | traceId        | string | 可选，填入后该笔支付将以此trace_id转账，注意不能是已使用过的 |
 
+::: tip
+收款账户请在 memo 里指定，memo 数据增加 W 字段，不指定默认为 Mixin 钱包。可选值为 FP（交易账户） 和 M（Mixin 钱包），例如：
+
+```json
+{
+  "W": "FP"
+}
+```
+
+:::
+
 响应：
 
 ```json
