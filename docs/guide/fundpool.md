@@ -307,7 +307,8 @@ Body:
 | traceId        | string | Optional, if filled in, this payment will transfer with this trace_id, note that it cannot be already used |
 
 ::: tip
-Please specify the receiving account in the memo. Add a 'W' field in the memo data. If not specified, the default is the Mixin Wallet. Optional values are FP (transaction account) and M (Mixin Wallet), for example:
+Please specify the receiving account in the memo. Add a 'W' field in the memo data. If not specified, the default is the
+Mixin Wallet. Optional values are FP (transaction account) and M (Mixin Wallet), for example:
 
 ```json
 {
@@ -317,6 +318,30 @@ Please specify the receiving account in the memo. Add a 'W' field in the memo da
 
 :::
 
+::: tip
+When payment from the Trading acct. fails or when receiving funds using the Trading acct., ExinOne will transfer
+0.00000001 EPC to the user's Mixin Wallet with a specific memo. This memo is a BASE64 JSON string, and its JSON object
+format is as follows:
+
+// Failure
+
+```json
+{
+  "S": "IE_NO",
+  "O": "$order->pay_trace_id"
+}
+```
+
+// Success
+
+```json
+{
+  "S": "IE_OK",
+  "O": "$order->pay_trace_id"
+}
+```
+
+:::
 
 Response:
 
