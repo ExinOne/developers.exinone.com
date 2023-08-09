@@ -318,30 +318,6 @@ Mixin Wallet. Optional values are FP (transaction account) and M (Mixin Wallet),
 
 :::
 
-::: tip
-When payment from the Trading acct. fails or when receiving funds using the Trading acct., ExinOne will transfer
-0.00000001 EPC to the user's Mixin Wallet with a specific memo. This memo is a BASE64 JSON string, and its JSON object
-format is as follows:
-
-// Failure
-
-```json
-{
-  "S": "IE_NO",
-  "O": "$order->pay_trace_id"
-}
-```
-
-// Success
-
-```json
-{
-  "S": "IE_OK",
-  "O": "$order->pay_trace_id"
-}
-```
-
-:::
 
 Response:
 

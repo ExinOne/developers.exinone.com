@@ -312,30 +312,6 @@ Body:
 
 :::
 
-::: tip
-使用交易账户支付失败时和使用交易账户收款时，ExinOne 会携带特定 memo 转 0.00000001 EPC 给该用户 Mixin 钱包,memo 为 BASE64
-JSON 字符串，JSON 对象格式如下：
-
-// 失败
-
-```json
-{
-  "S": "IE_NO",
-  "O": "$order->pay_trace_id"
-}
-```
-
-// 成功
-
-```json
-{
-  "S": "IE_OK",
-  "O": "$order->pay_trace_id"
-}
-```
-
-:::
-
 响应：
 
 ```json
