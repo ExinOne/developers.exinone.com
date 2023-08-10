@@ -24,6 +24,7 @@ export default {
             { text: 'Referral', link: '/guide/referral' },
             { text: 'Trading acct.', link: '/guide/fundpool' },
             { text: 'Loan', link: '/guide/loan' },
+            { text: 'Asset', link: '/guide/asset' },
           ]
         },
       ],
@@ -44,6 +45,7 @@ export default {
             { text: '返佣', link: '/zh-cn/guide/referral' },
             { text: '交易账户', link: '/zh-cn/guide/fundpool' },
             { text: '借贷', link: '/zh-cn/guide/loan' },
+            { text: '资产', link: '/zh-cn/guide/asset' },
           ]
         },
       ],
