@@ -267,7 +267,7 @@ Params:
 
 每个字段用 `#` 隔开，并以 BASE64 编码：
 
-`NAMESPACE|ACTION|FIELD1|FIELD2`
+`NAMESPACE#ACTION#FIELD1#FIELD2`
 
 | 行为 | NAMESPACE | ACTION | FIELD1 | FIELD2 |
 | ---- | ---- | ---- | ---- | ---- | 

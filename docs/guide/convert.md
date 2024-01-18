@@ -265,7 +265,7 @@ Response:
 Separate each field with `#` and encode with BASE64:
 
 ```
-NAMESPACE|ACTION|FIELD1|FIELD2
+NAMESPACE#ACTION#FIELD1#FIELD2
 ```
 
 | Action   | NAMESPACE | ACTION | FIELD1 | FIELD2 |
